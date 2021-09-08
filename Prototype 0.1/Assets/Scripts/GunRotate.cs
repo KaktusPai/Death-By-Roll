@@ -8,6 +8,9 @@ public class GunRotate : MonoBehaviour
     public GameObject Left;
     public GameObject Right;
     public GameObject back;
+
+    public GameObject gun;
+    public Vector3 tempPosition;
     private void FixedUpdate()
     {
         Vector3 diffrence = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -46,7 +49,19 @@ public class GunRotate : MonoBehaviour
                 back.SetActive(false);
             }
         }
-       
+
+        //Change Z index to -1 or 1 depending on front or behind character
+        if (transform.rotation.z >= 0)
+        {
+            tempPosition = gun.transform.position;
+            tempPosition.z = 1;
+            gun.transform.position = tempPosition;
+        } else if (transform.rotation.z < 0)
+        {
+            tempPosition = gun.transform.position;
+            tempPosition.z = -1;
+            gun.transform.position = tempPosition;
+        }
     }
 
 }

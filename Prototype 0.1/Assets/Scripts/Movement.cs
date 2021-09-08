@@ -54,8 +54,14 @@ public class Movement : MonoBehaviour
 
 
             }
+        } 
+        if (!IsRolling.IsRollin)
+        {
+            for (int i = 0; i < sides.Length; i++)
+            {
+                sides[i].GetComponent<Transform>().Rotate(0,0,0,0);
+            }
         }
-
     }
     private void FixedUpdate()
     {
@@ -64,6 +70,7 @@ public class Movement : MonoBehaviour
     IEnumerator Roll()
     {
         DodgeRoll = true;
+        IsRolling.IsRollin = true;
         yield return new WaitForSeconds(DodgeTime);
         DodgeRoll = false;
     }
