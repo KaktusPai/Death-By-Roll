@@ -176,7 +176,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.9
+  orthographic size: 0.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -381,8 +381,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e758210e6db6973419570361e060827a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 1
   rb: {fileID: 2024216580}
+  animator: {fileID: 2024216583}
 --- !u!50 &2024216580
 Rigidbody2D:
   serializedVersion: 4
@@ -444,7 +445,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f8aa2bd3a4226644f90ddd05112d5a6e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f48b3199d4366fe44b3ff96707f50f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
