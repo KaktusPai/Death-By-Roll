@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
     // Player references
 
     // Player variables
-    public static int ammo;
+    public int ammo;
     public int maxAmmo;
     // GUI References
     public TMP_Text ammoText;

@@ -31,6 +31,10 @@ public class GunShooting : MonoBehaviour
         {
             ShootBullet();
             Debug.Log("Clicked to shoot");
+        }
+
+        if (playerManager.ammo < 1)
+        {
             canShoot = false;
         }
     }
@@ -39,5 +43,6 @@ public class GunShooting : MonoBehaviour
         bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletSpeed, ForceMode2D.Impulse);
+        playerManager.ammo -= 1;
     }
 }
