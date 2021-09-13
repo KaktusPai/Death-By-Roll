@@ -6,11 +6,12 @@ public class GunShooting : MonoBehaviour
 {
     //References
     public PlayerManager playerManager;
+    public PlayerMovement playerMovement;
     //Variables
     public float bulletSpeed;
     public float shootCooldown;
     public bool isShooting;
-    public bool canShoot;
+    public bool canShoot = true;
     //Objects
     GameObject bullet;
     public GameObject pivot;
@@ -24,15 +25,16 @@ public class GunShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShoot)
+        if (Input.GetButtonDown("Fire1") && canShoot == true)
         {
+            ShootBullet();
+            Debug.Log("Clicked to shoot");
             canShoot = false;
-            ShootGun();
         }
     }
-    void ShootGun()
+    void ShootBullet()
     {
         bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
